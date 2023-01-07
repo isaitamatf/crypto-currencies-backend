@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CryptosModule } from './cryptos/cryptos.module';
 import { Crypto } from './cryptos/crypto.entity';
+import { CurrenciesModule } from './currencies/currencies.module';
+import { Currency } from './currencies/currency.entity';
 
 @Module({
   imports: [
@@ -14,10 +16,11 @@ import { Crypto } from './cryptos/crypto.entity';
       username: 'admin',
       password: '1234',
       database: 'widget',
-      entities: [Crypto],
+      entities: [Crypto, Currency],
       synchronize: true,
     }),
     CryptosModule,
+    CurrenciesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
