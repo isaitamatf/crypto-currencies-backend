@@ -8,6 +8,8 @@ import { CurrenciesModule } from './currencies/currencies.module';
 import { Currency } from './currencies/currency.entity';
 import { Rate } from './rates/rate.entity';
 import { RatesModule } from './rates/rates.module';
+import { HistoryModule } from './history/history.module';
+import { History } from './history/history.entity';
 
 @Module({
   imports: [
@@ -18,12 +20,13 @@ import { RatesModule } from './rates/rates.module';
       username: 'admin',
       password: '1234',
       database: 'widget',
-      entities: [Crypto, Currency, Rate],
+      entities: [Crypto, Currency, Rate, History],
       synchronize: true,
     }),
     CryptosModule,
     CurrenciesModule,
     RatesModule,
+    HistoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
