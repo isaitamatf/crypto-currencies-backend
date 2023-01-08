@@ -12,4 +12,8 @@ export class HistoryService {
   async getAllHistory(): Promise<History[]> {
     return await this.historyRepository.find();
   }
+
+  async createHistory(body: History): Promise<History> {
+    return this.historyRepository.save(body);
+  }
 }
